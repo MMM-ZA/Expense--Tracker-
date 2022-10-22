@@ -26,9 +26,14 @@ function App() {
     },
   ];
 
+  const addExpenseHandler = expense => {
+    console.log('In app.js');
+    console.log(expense);
+  };
+
   return (
      <div>
-      <NewExpense/>
+      <NewExpense onAddExpense={addExpenseHandler}/>
        <h1>Expense Tracker</h1>
        <ExpenseItem title={expenses[0].title} amount={expenses[0].amount} date={expenses[0].date}></ExpenseItem>
        <ExpenseItem title={expenses[1].title} amount={expenses[1].amount} date={expenses[1].date}></ExpenseItem>
