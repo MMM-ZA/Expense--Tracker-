@@ -15,11 +15,14 @@ const ExpensesChart = props => {
   {label: 'Oct', value: 0},
   {label: 'Nov', value: 0},
   {label: 'Dec', value: 0}
+ ];
 
+ for (const expense of props.expenses) {
+  const expenseMonth = expense.date.getMonth(); //start from 0 (Jan)
+  chartDataPoints[expenseMonth].value += expense.amount;
+ }
 
-]
-
- return <Chart/>
+ return <Chart dataPoints={chartDataPoints}/>
 
 };
 
